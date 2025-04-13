@@ -78,7 +78,8 @@ Make sure you have the following installed:
 
 ```bash
 LokalAssisment/
-├── src/                            
+├── src/      
+│   ├── assets/                        
 │   ├── components/                 
 │   │   └── JobCard.tsx
 │   │   └── JobInfo.tsx
@@ -101,6 +102,7 @@ LokalAssisment/
 │   │   └── api.ts
 │   ├── types/                   
 │   │   └── job.ts
+│   │   └── navigation.ts
 │   └── utils/                      
 │       └── storage.ts
 ├── App.tsx                         
