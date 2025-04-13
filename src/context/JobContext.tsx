@@ -6,16 +6,25 @@ import { getBookmarkedJobs, saveBookmarkedJobs } from '../utils/storage';
 export const JobContext = createContext<JobContextType | undefined>(undefined);
 
 export const JobProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [page, setPage] = useState(1);
     const [jobs, setJobs] = useState<JobData[]>([]);
     const [selectedJob, setSelectedJob] = useState<JobData | null>(null);
     const [bookmarkedJobs, setBookmarkedJobs] = useState<JobData[]>([]);
     const [loading, setLoading] = useState(false);
 
     const fetchJobs = async () => {
+        if (loading) return;
         try {
             setLoading(true);
-            const data: JobData[] = await getJobs();
-            setJobs(data);
+            const data: JobData[] = await getJobs(page);
+            if (data.length === 0) {
+                setPage(1);
+                const repeatedJobs = await getJobs(1);
+                setJobs(prev => [...prev, ...repeatedJobs]);
+            } else {
+                setJobs(prev => [...prev, ...data]);
+                setPage(prev => prev + 1);
+            }
         } catch (error) {
             console.error('Failed to fetch jobs:', error);
         } finally {
@@ -36,13 +45,12 @@ export const JobProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
 
     useEffect(() => {
-        const loadBookmarkedJobs = async () => {
-            const storedBookmarks = await getBookmarkedJobs();
-            setBookmarkedJobs(storedBookmarks);
+        const init = async () => {
+            const stored = await getBookmarkedJobs();
+            setBookmarkedJobs(stored);
+            fetchJobs();
         };
-
-        loadBookmarkedJobs();
-        fetchJobs();
+        init();
     }, []);
 
     return (
