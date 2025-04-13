@@ -2,6 +2,8 @@
 
 This is a job listing and bookmarking app built using **React Native** and **Expo**. The app fetches job data from a remote API, allows users to bookmark jobs, and stores bookmarked jobs offline for later viewing.
 
+[![Watch the video](https://drive.google.com/file/d/1Db72ZPgmIW16QVStZXkeloTu45Ir9o8p/view?usp=drive_link)](Lokal Assignment)
+
 ## Features
 
 - **Jobs Screen**: Fetches job data from the given API and displays a list of jobs with title, location, salary, and phone number.
