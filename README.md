@@ -31,7 +31,7 @@ Make sure you have the following installed:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/IshikaNimade/LocalAssignment.git
+   git clone https://github.com/IshikaNimade/LokalAssignment.git
    ```
 
 2. **Navigate to the Project Directory**:
@@ -120,7 +120,7 @@ LokalAssisment/
 - Infinite scroll is implemented, meaning more jobs will load as the user scrolls down.
 - Users can click on any job card to view detailed information about the job.
 
-<img src="src/assets/joblist.jpeg" alt="Job List Screen" width="500"/>
+<img src="src/assets/joblist.jpeg" alt="Job List Screen" width="300"/>
 
 ### **Job Detail Screen**
 
@@ -129,14 +129,14 @@ LokalAssisment/
 - Users can contact the employer via WhatsApp or call directly from this screen.
 - Users can also bookmark the job for later view.
 
-<img src="src/assets/jobdetail.jpeg" alt="Job Detail Screen" width="500"/>
+<img src="src/assets/jobdetail.jpeg" alt="Job Detail Screen" width="300"/>
 
 ### **Bookmarks Screen**
 
 - The Bookmarks screen shows all jobs the user has bookmarked.
 - Users can easily remove bookmarks and see a list of jobs they've saved for later.
 
-<img src="src/assets/bookmarklist.jpeg" alt="Bookmark Screen" width="500"/>
+<img src="src/assets/bookmarklist.jpeg" alt="Bookmark Screen" width="300"/>
 
 ### **Bookmarking Jobs**
 
